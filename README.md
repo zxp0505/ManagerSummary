@@ -123,17 +123,17 @@ http://blog.csdn.net/yy1300326388/article/details/48344411
   http://blog.csdn.net/guchuanhang/article/details/52513206
 
 ## 28： 针对igore文件 ## 
-*.iml
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.idea
-*.apk
+		*.iml
+		.gradle
+		/local.properties
+		/.idea/workspace.xml
+		/.idea/libraries
+		.DS_Store
+		/build
+		/captures
+		.externalNativeBuild
+		.idea
+		*.apk
 
 如果提交了一些本地编译的文件 需要做的是 将本地文件进行删除 提交push到git上  将git上的文件也删除了 然后再gitignore里面添加忽略文件  push到git上 最后重新编译 就好了（记得保存副本）
 
