@@ -201,4 +201,13 @@ http://blog.csdn.net/xy _nyle/article/details/19853591  发现4.4手机点击not
 ## 47.加载组织架构的时候 层级树 ##
 
 https://github.com/shineM/TreeView
- 
+
+## 48.点击notify跳转到固定的activity##
+
+ 思路参考：http://www.jianshu.com/p/224e2479da18 要区分应用是否在前台 具体情况
+
+## 49.在发布前几版出现 登陆后 会再次登陆的问题 ##
+是因为序列化modle的时候没有加序列化id导致的
+自动生成序列化id 参考：
+在eclipse中很容易的就能自动提示添加serialVersionUID，而在AndroidStudio中却没有提示，原来是as的检查配置中默认是关掉对serialVersionUID的检查的，那么我们打开就可以。
+as->preferences->Inspections->serialization issues->Serializable class without 'serialVersionUID' 勾上确认就可以
