@@ -196,7 +196,7 @@ https://github.com/googlesamples/easypermissions  //google官方的库
 http://blog.csdn.net/zhq217217/article/details/52767035
 
 ## 46.点击notifytion没反应 ##
-http://blog.csdn.net/xy _nyle/article/details/19853591  发现4.4手机点击notifytion没反应 是因为 PendingIntent pendingIntent = PendingIntent.getActivity(appContext, notifyID, msgIntent, PendingIntent.FLAG_UPDATE_CURRENT);  里面的notifyid与环信demo的id重复 导致的 没反应  需要独一无二的
+http://blog.csdn.net/xy_nyle/article/details/19853591 （此片文章包含了 notifycation的基本使用 自定义notify  以及点击进去跳转activity的栈的使用 可查看48项） 发现4.4手机点击notifytion没反应 是因为 PendingIntent pendingIntent = PendingIntent.getActivity(appContext, notifyID, msgIntent, PendingIntent.FLAG_UPDATE_CURRENT);  里面的notifyid与环信demo的id重复 导致的 没反应  需要独一无二的
 
 ## 47.加载组织架构的时候 层级树 ##
 
@@ -211,3 +211,12 @@ https://github.com/shineM/TreeView
 自动生成序列化id 参考：
 在eclipse中很容易的就能自动提示添加serialVersionUID，而在AndroidStudio中却没有提示，原来是as的检查配置中默认是关掉对serialVersionUID的检查的，那么我们打开就可以。
 as->preferences->Inspections->serialization issues->Serializable class without 'serialVersionUID' 勾上确认就可以
+
+## 50.mvp+clean架构 ##
+相对于mvp 多加了个domain层  将present层中内容相对分担些 主题架构的意思是：dataplayer domainplayer present view层四个层类似洋葱层层包裹 内层不知外层的 调用 便于测试 复用 低耦合 扩展性好 
+https://github.com/bravekingzhang/CleanArch
+
+http://www.jianshu.com/p/c6a1a5c9a49b
+http://www.jianshu.com/p/7ae3095f2cb5
+
+在这个基础上学习 retrofit  dagger2 reaml这三个框架 更易于扩展
