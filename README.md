@@ -9,7 +9,10 @@ http://home.bdqn.cn/thread-57867-1-1.html
 
 ## 3.相册图片的选择   ##
 https://github.com/LuckSiege/PictureSelector
+
 https://github.com/fishwjy/MultiType-FilePicker
+
+https://github.com/zhihu/Matisse  //知乎开源
 
 ## 4 我的反馈界面的tab ##  
 https://github.com/H07000223/FlycoTabLayout/
@@ -220,3 +223,26 @@ http://www.jianshu.com/p/c6a1a5c9a49b
 http://www.jianshu.com/p/7ae3095f2cb5
 
 在这个基础上学习 retrofit  dagger2 reaml这三个框架 更易于扩展
+
+
+##51 项目中的一些注意事项##
+
+对于一些工具类里面用的context 要采用 若引用  
+contextWeakReference = new WeakReference<Context>(context);
+Context context = contextWeakReference.get（）
+
+
+在小米手机（存储空间不足）上发现个问题序列化需要的modle在data/.../cache下面getCacheDir() 当系统空间不足的情况下 会清理掉 所以得注意   解决方案 序列化地址换成getfileDir()  data/.../file
+
+##52scroll内部元素如何做到fill_parent##
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/0704/1629.html
+要让ScrollView内部元素的 fill_parent 起作用必须设置android:fillViewport="true"
+
+## 应用启动模式的精髓 ##
+
+启动一个activity 先查看其所需要的 任务栈存在不 不存在的话 新建个任务栈 存在的话 然后按照他的启动模式（lauchmode---standard singleTop singleTask  singleInstance） 进行启动 
+
+做了一个测试  a -> standard b ->standard c-> singleInstance
+
+从a到c 然后c到a 执行命令： adb shell dumpsys activity activities 查看任务栈 发现 运行任务栈模式 是 aba  c   
+分析 从ab 进入c界面的时候由于是singleInstance 会单独开启一个进程来存储唯一的一个任务 从c进入a 发现有需要的栈 （与前面的ab一致） 然后根据自己的启动模式 standard进行启动
