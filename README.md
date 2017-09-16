@@ -244,5 +244,26 @@ http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/0704/1629.html
 
 做了一个测试  a -> standard b ->standard c-> singleInstance
 
-从a到c 然后c到a 执行命令： adb shell dumpsys activity activities 查看任务栈 发现 运行任务栈模式 是 aba  c   
+从a到c 然后c到a 执行命令： adb shell dumpsys activity activities 查看任务栈 发现 运行任务栈模式 是 aba  c   notifyItemRemoved
 分析 从ab 进入c界面的时候由于是singleInstance 会单独开启一个进程来存储唯一的一个任务 从c进入a 发现有需要的栈 （与前面的ab一致） 然后根据自己的启动模式 standard进行启动
+
+## 53.侧滑删除 ##
+
+https://github.com/mcxtzhang/SwipeDelMenuLayout 
+http://blog.csdn.net/zxt0601/article/details/53157090  //使用详解
+
+## 54.权限控制 ##
+
+https://github.com/googlesamples/easypermissions 
+
+## 55.日历选择  ##
+
+https://github.com/yannecer/NCalendar
+
+## 56.读取pdf文件 ##
+
+https://github.com/barteksc/AndroidPdfViewer
+
+## 57.生成pdf文件 ##
+
+https://github.com/theappguruz/Android-Text-to-PDF/
